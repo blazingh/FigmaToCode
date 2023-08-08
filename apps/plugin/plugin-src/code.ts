@@ -16,8 +16,8 @@ import { swiftUICodeGenTextStyles } from "backend/src/swiftui/swiftuiMain";
 let userPluginSettings: PluginSettings;
 
 const defaultPluginSettings: PluginSettings = {
-  framework: "HTML",
-  jsx: false,
+  framework: "Tailwind",
+  jsx: true,
   optimizeLayout: true,
   layerName: false,
   inlineStyle: true,
@@ -43,7 +43,7 @@ const getUserSettings = async () => {
         isKeyOfPluginSettings(key) &&
         key in possiblePluginSrcSettings &&
         typeof possiblePluginSrcSettings[key] ===
-          typeof defaultPluginSettings[key]
+        typeof defaultPluginSettings[key]
       ) {
         validSettings[key] = possiblePluginSrcSettings[key] as any;
       }
